@@ -41,6 +41,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { LoginComponent } from './login/login.component';
     MatTooltipModule,
     MatTreeModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
