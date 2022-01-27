@@ -1,0 +1,8 @@
+.mat-tab-labels {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mat-card{
+    background-color:#121212;
+}

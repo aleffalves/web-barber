@@ -1,4 +1,5 @@
 .page-login{
+    background-color:#121212;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -23,9 +24,11 @@
     box-sizing: border-box;
     max-width: 50%;
     text-align: center;
+    border-right: antiquewhite solid;
 }
 
 .form-login{
+    padding-top: 20px;
     display: grid;
 }
 
@@ -35,3 +38,17 @@
     justify-content: center;
     align-items: center;
   }
+
+.mat-tab-label{
+    color:white;
+    min-width: 25px !important;
+    padding: 5px;
+       background-color:transparent;
+        color:white;
+        font-weight: 700;
+  }
+
+.mat-tab-labels {
+    display: flex !important;
+    justify-content: space-around !important;
+}
