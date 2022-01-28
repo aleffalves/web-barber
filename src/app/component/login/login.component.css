@@ -52,3 +52,9 @@
     display: flex !important;
     justify-content: space-around !important;
 }
+
+@media (max-width: 500px){
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+        padding: 0px !important;
+    }
+}
