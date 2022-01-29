@@ -58,3 +58,21 @@
         padding: 0px !important;
     }
 }
+
+::ng-deep .mat-form-field-infix{
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 100% !important;
+}
+
+::ng-deep input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 1000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff80;
+    -webkit-box-shadow: 0 0 0 30px #121212 inset;
+    box-shadow: 0 0 0 30px #121212 inset;
+}

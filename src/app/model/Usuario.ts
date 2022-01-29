@@ -1,8 +1,8 @@
-export interface Usuario{
-    id: number;
-    nome: string;
-    senha: string;
-    cpf: string;
-    email: string;
-    dataCriacao: Date
+export class Usuario {
+    id !: number;
+    nome !: string; 
+    senha !: string; 
+    cpf !: string; 
+    email !: string; 
+    dataAniversario : Date = new Date();
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { UsuarioService } from 'src/app/service/UsuarioService';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,22 @@ import { Usuario } from 'src/app/model/Usuario';
 })
 export class LoginComponent implements OnInit {
 
-  usuario : Usuario [] = [];
+  usuario = new Usuario;
 
-  constructor(  ) { }
+  constructor( private usuarioService : UsuarioService,
+              private router : Router ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+  }
+
+  cadastroUsuario(usuario : Usuario){
+    return this.usuarioService.cadastrarUsuario(usuario).subscribe(
+      () => {
+        window.location.reload();
+        }
+    )
   }
 }
