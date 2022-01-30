@@ -8,16 +8,19 @@
                 <mat-tab-group>
                     <div class="group">
                         <mat-tab label="ENTRAR">
-                            <form class="form-login">
+                            <form class="form-login" #formCadastro="ngForm" (ngSubmit)="onSubmit()">
                                 <mat-form-field appearance="outline">
-                                    <mat-label>Email </mat-label>
-                                    <input  matInput placeholder="Email" type="email">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Email" type="email" 
+                                    [(ngModel)]="usuarioLogin.email" name="emailLogin">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Senha</mat-label>
-                                    <input matInput placeholder="Senha" type="password">
+                                    <input matInput placeholder="Senha" type="password" 
+                                    [(ngModel)]="usuarioLogin.senha" name="senhaLogin">
                                 </mat-form-field>
-                                <button mat-raised-button color="primary" >ENTRAR</button>
+                                <button mat-raised-button color="primary" 
+                                type="submit" (click)="toLogin()">ENTRAR</button>
                             </form>
                         </mat-tab>
                     </div>
@@ -26,33 +29,34 @@
                             <form class="form-login" #formClient="ngForm" (ngSubmit)="onSubmit()">
                                 <mat-form-field appearance="outline">
                                     <mat-label>Nome</mat-label>
-                                    <input matInput placeholder="Digite seu Nome"
-                                      [(ngModel)]="usuario.nome" name="nome" type="text" required>
+                                    <input matInput placeholder="Digite seu Nome" [(ngModel)]="usuario.nome" name="nome"
+                                        type="text" required>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Email</mat-label>
-                                    <input matInput placeholder="Digite seu email" 
-                                    [(ngModel)]="usuario.email" name="email" type="email" required>
+                                    <input matInput placeholder="Digite seu email" [(ngModel)]="usuario.email"
+                                        name="email" type="email" required>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>CPF</mat-label>
-                                    <input matInput placeholder="Digite seu CPF" 
-                                    [(ngModel)]="usuario.cpf" name="cpf" type="number" required>
+                                    <input matInput placeholder="Digite seu CPF" [(ngModel)]="usuario.cpf" name="cpf"
+                                        type="number" required>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Data de Aniversario</mat-label>
-                                    <input matInput [matDatepicker]="picker" 
-                                    [(ngModel)]="usuario.dataAniversario" name="data" required>
+                                    <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataAniversario"
+                                        name="data" required>
                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                     <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Senha</mat-label>
-                                    <input matInput placeholder="Digite sua Senha escolhida" 
-                                    [(ngModel)]="usuario.senha" name="senha" type="password" required>
+                                    <input matInput placeholder="Digite sua Senha escolhida" [(ngModel)]="usuario.senha"
+                                        name="senha" type="password" required>
                                 </mat-form-field>
-                                <button mat-raised-button color="primary" 
-                                type="submit" (click)="cadastroUsuario(usuario) " [disabled]="!formClient.valid">CADASTRAR</button>
+                                <button mat-raised-button color="primary" type="submit"
+                                    (click)="cadastroUsuario(usuario) "
+                                    [disabled]="!formClient.valid">CADASTRAR</button>
                             </form>
                         </mat-tab>
                     </div>

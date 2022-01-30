@@ -44,11 +44,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './component/login/login.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

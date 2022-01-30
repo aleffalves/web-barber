@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { UsuarioService } from 'src/app/service/UsuarioService';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,9 +12,10 @@ import { UsuarioService } from 'src/app/service/UsuarioService';
 export class LoginComponent implements OnInit {
 
   usuario = new Usuario;
+  usuarioLogin = new Usuario;
 
-  constructor( private usuarioService : UsuarioService,
-              private router : Router ) { }
+  constructor( private usuarioService : UsuarioService, 
+              private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +29,9 @@ export class LoginComponent implements OnInit {
         window.location.reload();
         }
     )
+  }
+
+  toLogin(){
+   this.router.navigate(['home']);
   }
 }
