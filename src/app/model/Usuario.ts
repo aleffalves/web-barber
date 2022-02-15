@@ -3,6 +3,7 @@ export class Usuario {
     nome !: string; 
     senha !: string; 
     cpf !: string; 
-    email !: string; 
+    email !: string;
+    telefone !: string; 
     dataAniversario : Date = new Date();
 }

@@ -20,7 +20,7 @@
                                     [(ngModel)]="usuarioLogin.senha" name="senhaLogin">
                                 </mat-form-field>
                                 <button mat-raised-button color="primary" 
-                                type="submit" (click)="toLogin()">ENTRAR</button>
+                                type="submit" (click)="toLogin(usuarioLogin)">ENTRAR</button>
                             </form>
                         </mat-tab>
                     </div>
@@ -38,14 +38,19 @@
                                         name="email" type="email" required>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
+                                    <mat-label>Telefone</mat-label>
+                                    <input matInput placeholder="Digite seu telefone" [(ngModel)]="usuario.telefone"
+                                        name="telefone"  required mask="(00)00000-0000">
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
                                     <mat-label>CPF</mat-label>
                                     <input matInput placeholder="Digite seu CPF" [(ngModel)]="usuario.cpf" name="cpf"
-                                        type="number" required>
+                                        required mask="000.000.000-00">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Data de Aniversario</mat-label>
                                     <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataAniversario"
-                                        name="data" required>
+                                        name="data" required >
                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                     <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>
