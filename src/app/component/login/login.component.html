@@ -11,13 +11,13 @@
                             <form class="form-login" #formCadastro="ngForm" (ngSubmit)="onSubmit()">
                                 <mat-form-field appearance="outline">
                                     <mat-label>Email</mat-label>
-                                    <input matInput placeholder="Email" type="email" 
-                                    [(ngModel)]="usuarioLogin.email" name="emailLogin">
+                                    <input matInput placeholder="Email"  
+                                    [(ngModel)]="usuarioLogin.email" name="emailLogin" autocomplete="off">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Senha</mat-label>
                                     <input matInput placeholder="Senha" type="password" 
-                                    [(ngModel)]="usuarioLogin.senha" name="senhaLogin">
+                                    [(ngModel)]="usuarioLogin.senha" name="senhaLogin" autocomplete="off">
                                 </mat-form-field>
                                 <button mat-raised-button color="primary" 
                                 type="submit" (click)="toLogin(usuarioLogin)">ENTRAR</button>
@@ -30,27 +30,27 @@
                                 <mat-form-field appearance="outline">
                                     <mat-label>Nome</mat-label>
                                     <input matInput placeholder="Digite seu Nome" [(ngModel)]="usuario.nome" name="nome"
-                                        type="text" required>
+                                        required autocomplete="off">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Email</mat-label>
                                     <input matInput placeholder="Digite seu email" [(ngModel)]="usuario.email"
-                                        name="email" type="email" required>
+                                        name="email" required autocomplete="off">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Telefone</mat-label>
                                     <input matInput placeholder="Digite seu telefone" [(ngModel)]="usuario.telefone"
-                                        name="telefone"  required mask="(00)00000-0000">
+                                        name="telefone"  required mask="(00)00000-0000" autocomplete="off">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>CPF</mat-label>
                                     <input matInput placeholder="Digite seu CPF" [(ngModel)]="usuario.cpf" name="cpf"
-                                        required mask="000.000.000-00">
+                                        required mask="000.000.000-00" autocomplete="off">
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
                                     <mat-label>Data de Aniversario</mat-label>
                                     <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataAniversario"
-                                        name="data" required >
+                                        name="data" required autocomplete="off">
                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                     <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>

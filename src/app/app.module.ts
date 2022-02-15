@@ -47,6 +47,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './component/home/home.component';
 import { NgxMaskModule, IConfig} from 'ngx-mask'
 import { MAT_DATE_LOCALE } from '@angular/material/core'
+import { UsuarioService } from './service/UsuarioService.service';
+import { LoginService } from './service/LoginService.service';
+import { AuthService } from './service/AuthService.service';
+
 
 @NgModule({
   declarations: [
@@ -103,7 +107,11 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
   ],
   providers: [{
     provide: MAT_DATE_LOCALE, useValue: 'pt-BR' 
-  }],
+  },
+  UsuarioService,
+  LoginService,
+  AuthService   
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
