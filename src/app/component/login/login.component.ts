@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/model/Login';
 import { Usuario } from 'src/app/model/Usuario';
@@ -15,11 +16,11 @@ export class LoginComponent implements OnInit {
 
   usuario = new Usuario;
   usuarioLogin = new Login;
-  mensagem : string = '';
 
   constructor( private usuarioService : UsuarioService, 
               private loginService : LoginService,
-              private router : Router) { }
+              private router : Router,
+              private snackBar : MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -31,17 +32,44 @@ export class LoginComponent implements OnInit {
     this.usuario.roles = ["USERS"];
     return this.usuarioService.cadastrarUsuario(usuario).subscribe(
       () => {
+        this.snackBar.open('Cadastro efetuado com Sucesso','Sucesso',{
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+          panelClass:['green-snapback']
+        })
         window.location.reload();
-        }
+        },
+        error => {
+          this.snackBar.open('Cadastro não efetuado, verifique seus dados corretamente!',
+           'Falha',{
+             duration: 2000,
+             horizontalPosition: 'right',
+             verticalPosition: 'top',
+             panelClass: ['red-snapback']
+           })
+        } 
     )
   }
 
   toLogin(usuarioLogin : Login){
     return this.loginService.logar(usuarioLogin).subscribe( cadastro => {
-      this.mensagem = "Login Sucessfull"
       const access_token = JSON.stringify(cadastro)
       localStorage.setItem('access_token',access_token)
+      this.snackBar.open('Login Autorizado!','SUCESSO!',{
+        duration: 2000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top',
+        panelClass:['green-snapback']
+      })
       this.router.navigate(['home'])
+      },
+      error => {
+        this.snackBar.open('Login e/ou Senha Inválido!','FALHA!',{
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+          panelClass: ['red-snapback']
+        })
       }
     )
   }

@@ -51,7 +51,6 @@ import { UsuarioService } from './service/UsuarioService.service';
 import { LoginService } from './service/LoginService.service';
 import { AuthService } from './service/AuthService.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
