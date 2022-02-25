@@ -1,0 +1,17 @@
+mat-sidenav-container{
+    height: 100%;
+    background: none;
+}
+
+mat-sidenav{
+    background-color: #212121;
+}
+
+.toolbar{
+    justify-content: space-between;
+}
+
+.span{
+    width: 180px;
+    padding-left: 20px;
+}

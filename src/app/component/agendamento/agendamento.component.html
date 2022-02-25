@@ -1,0 +1,18 @@
+<div class="card-principal">
+    <div>
+        <mat-card>
+            <mat-card-title>Agendamento de Horário</mat-card-title>
+            <div>
+                <section>Selecione a Data</section>
+                <mat-card class="demo-inline-calendar-card">
+                    <mat-calendar [(selected)]="selected"></mat-calendar>
+                </mat-card>
+                <div>
+                    <p>Data Selecionada: {{selected | date : 'dd/MM/yyyy'}}</p>
+                    <button mat-raised-button>CONFIRMAR</button>
+                    <button mat-raised-button>REMOVER</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -50,12 +50,14 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
 import { UsuarioService } from './service/UsuarioService.service';
 import { LoginService } from './service/LoginService.service';
 import { AuthService } from './service/AuthService.service';
+import { AgendamentoComponent } from './component/agendamento/agendamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    AgendamentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +106,10 @@ import { AuthService } from './service/AuthService.service';
     HttpClientModule,
     NgxMaskModule.forRoot(),
   ],
-  providers: [{
+  exports:[
+    HomeComponent
+  ],
+    providers: [{
     provide: MAT_DATE_LOCALE, useValue: 'pt-BR' 
   },
   UsuarioService,
