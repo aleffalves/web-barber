@@ -13,6 +13,7 @@ import { UsuarioService } from 'src/app/service/UsuarioService.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  hide = true
 
   usuario = new Usuario;
   usuarioLogin = new Login;

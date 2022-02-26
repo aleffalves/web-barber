@@ -1,18 +1,47 @@
-<div class="card-principal">
-    <div>
-        <mat-card>
-            <mat-card-title>Agendamento de Horário</mat-card-title>
-            <div>
-                <section>Selecione a Data</section>
-                <mat-card class="demo-inline-calendar-card">
-                    <mat-calendar [(selected)]="selected"></mat-calendar>
-                </mat-card>
-                <div>
-                    <p>Data Selecionada: {{selected | date : 'dd/MM/yyyy'}}</p>
-                    <button mat-raised-button>CONFIRMAR</button>
-                    <button mat-raised-button>REMOVER</button>
+<div class="principal">
+    <section class="agendamento">
+        <button mat-icon-button color="primary" (click)="voltar()">
+            <mat-icon>reply</mat-icon>
+        </button>
+        Agendamento
+    </section>
+    <div class="card-data">
+        <div>
+            <mat-card>
+                <div class="font-subtitle">
+                    <section>SELECIONE A DATA</section>
+                    <mat-card class="demo-inline-calendar-card">
+                        <mat-calendar [(selected)]="selected"></mat-calendar>
+                    </mat-card>
+                    <div class="data-select">
+                        <p>Data Selecionada: {{selected | date : 'dd/MM/yyyy'}}</p>
+                    </div>
+                    <div>
+                        <button mat-raised-button class="buton-confirmar">CONFIRMAR</button>
+                        <button mat-raised-button class="buton-remover">REMOVER</button>
+                    </div>
                 </div>
-            </div>
-        </mat-card>
+            </mat-card>
+        </div>
+        <div class="card-horario">
+            <section class="font-subtitle">SELECIONE O HORÁRIO</section>
+            <mat-form-field appearance="outline">
+                <mat-select [(ngModel)]="selectedValue" name="food" placeholder="Selecione o Horário Disponivel">
+                    <mat-option *ngFor="let food of dataSource" [value]="food">
+                        {{food.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="card-servicos">
+            <section class="font-subtitle">SELECIONE OS SERVIÇOS</section>
+            <mat-form-field appearance="outline">
+                <mat-select [(ngModel)]="selectedValue" name="food" multiple placeholder="Selecione os Serviços">
+                    <mat-option *ngFor="let food of dataSource" [value]="food">
+                        {{food.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
 </div>
