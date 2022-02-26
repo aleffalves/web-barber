@@ -4,6 +4,9 @@
     </div>
     <div class="card-div">
         <mat-card class="login">
+            <div>
+                <img src="\assets\logo9.png" class="logo-card">
+            </div>
             <mat-card-content>
                 <mat-tab-group>
                     <div class="group">
@@ -32,7 +35,7 @@
                             <form class="form-login" #formClient="ngForm" (ngSubmit)="onSubmit()">
                                 <mat-form-field appearance="outline">
                                     <mat-label>Nome</mat-label>
-                                    <input matInput placeholder="Digite seu Nome" [(ngModel)]="usuario.nome" name="nome"
+                                    <input matInput placeholder="Digite seu Nome Completo" [(ngModel)]="usuario.nome" name="nome"
                                         required autocomplete="off" minlength="3" #name="ngModel">
                                         <mat-hint *ngIf="name.invalid && name.touched" class="field-error">
                                             Digite um nome com mais de 3 caracters</mat-hint>
@@ -59,7 +62,7 @@
                                             Digite um cpf válido</mat-hint>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline">
-                                    <mat-label>Data de Aniversario</mat-label>
+                                    <mat-label>Data de Nascimento</mat-label>
                                     <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataAniversario"
                                         name="data" required autocomplete="off" #data="ngModel">
                                         <mat-hint *ngIf="data.invalid && data.touched" class="field-error">
