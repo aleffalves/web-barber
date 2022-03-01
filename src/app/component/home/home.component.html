@@ -1,0 +1,48 @@
+<mat-toolbar class="toolbar">STUDIO DO CORTE
+    <div>
+        <button color="primary" mat-raised-button (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <mat-nav-list>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded" >date_range</mat-icon>
+                <span class="span" *ngIf="isExpanded" routerLink="/home/agendamento">Agendamento</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">work_outline</mat-icon>
+                <span class="span" *ngIf="isExpanded">Serviços</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">people</mat-icon>
+                <span class="span" *ngIf="isExpanded">Clientes</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">sell</mat-icon>
+                <span class="span" *ngIf="isExpanded">Vendas</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">paid</mat-icon>
+                <span class="span" *ngIf="isExpanded">Financeiro</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">info</mat-icon>
+                <span class="span" *ngIf="isExpanded">Sobre</span>
+            </mat-list-item>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>

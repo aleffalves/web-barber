@@ -1,0 +1,90 @@
+<div class="page-login">
+    <div class="logo-login">
+        <img type="image" src="assets\logo.png" style="height: 100%;">
+    </div>
+    <div class="card-div">
+        <mat-card class="login">
+            <div>
+                <img type="image" src="assets\logo9.png" class="logo-card">
+            </div>
+            <mat-card-content>
+                <mat-tab-group>
+                    <div class="group">
+                        <mat-tab label="ENTRAR">
+                            <form class="form-login" #formCadastro="ngForm" (ngSubmit)="onSubmit()">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Email"  
+                                    [(ngModel)]="usuarioLogin.email" name="emailLogin" autocomplete="off">
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Senha</mat-label>
+                                    <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" 
+                                    [(ngModel)]="usuarioLogin.senha" name="senhaLogin" autocomplete="off">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                                <button mat-raised-button color="primary" 
+                                type="submit" (click)="toLogin(usuarioLogin)">ENTRAR</button>
+                            </form>
+                        </mat-tab>
+                    </div>
+                    <div class="group">
+                        <mat-tab label="CADASTRO">
+                            <form class="form-login" #formClient="ngForm" (ngSubmit)="onSubmit()">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Nome</mat-label>
+                                    <input matInput placeholder="Digite seu Nome Completo" [(ngModel)]="usuario.nome" name="nome"
+                                        required autocomplete="off" minlength="3" #name="ngModel">
+                                        <mat-hint *ngIf="name.invalid && name.touched" class="field-error">
+                                            Digite um nome com mais de 3 caracters</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Digite seu email" [(ngModel)]="usuario.email"
+                                        name="email" required autocomplete="off" email="true" #email="ngModel">
+                                        <mat-hint *ngIf="email.invalid && email.touched" class="field-error">
+                                            Digite um email válido</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Telefone</mat-label>
+                                    <input matInput placeholder="Digite seu telefone" [(ngModel)]="usuario.telefone"
+                                        name="telefone"  required mask="(00)00000-0000" autocomplete="off" #telefone="ngModel">
+                                        <mat-hint *ngIf="telefone.invalid && telefone.touched" class="field-error">
+                                            Digite um telefone válido</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>CPF</mat-label>
+                                    <input matInput placeholder="Digite seu CPF" [(ngModel)]="usuario.cpf" name="cpf"
+                                        required mask="000.000.000-00" autocomplete="off" #cpf="ngModel">
+                                        <mat-hint *ngIf="cpf.invalid && cpf.touched" class="field-error">
+                                            Digite um cpf válido</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Data de Nascimento</mat-label>
+                                    <input matInput [matDatepicker]="picker" [(ngModel)]="usuario.dataAniversario"
+                                        name="data" required autocomplete="off" #data="ngModel">
+                                        <mat-hint *ngIf="data.invalid && data.touched" class="field-error">
+                                            Selecione sua data de nascimento</mat-hint>
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Senha</mat-label>
+                                    <input matInput placeholder="Digite sua Senha escolhida" [(ngModel)]="usuario.senha"
+                                        name="senha" type="password" required minlength="8" #senha="ngModel">
+                                        <mat-hint *ngIf="senha.invalid && senha.touched" class="field-error">
+                                            Sua senha precisa conter no mínimo 8 caracters</mat-hint>
+                                </mat-form-field>
+                                <button mat-raised-button color="primary" type="submit"
+                                    (click)="cadastroUsuario(usuario) "
+                                    [disabled]="!formClient.valid">CADASTRAR</button>
+                            </form>
+                        </mat-tab>
+                    </div>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+.page-login{
+    background-color:#121212;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.login{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 50%;
+    margin: 10px;
+    padding: 0px;
+}
+
+@media (max-width: 1500px){
+.logo-login{
+  display: none;
+    }
+}
+
+.logo-login{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 50%;
+    text-align: center;
+    border-right: antiquewhite solid;
+}
+
+.logo-card{
+    display: none;
+}
+
+@media (max-width: 1500px) {
+    .logo-card{
+        display: inline-flex;
+        width: 250px; 
+        padding-bottom: 30px;
+    }    
+}
+
+@media (max-width: 500px) {
+    .logo-card{
+        display: inline-flex;
+        width: 100%; 
+        padding-bottom: 30px;
+    }    
+}
+
+
+
+
+.form-login{
+    padding-top: 20px;
+    display: grid;
+}
+
+.card-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+.mat-tab-label{
+    color:white;
+    min-width: 25px !important;
+    padding: 5px;
+       background-color:transparent;
+        color:white;
+        font-weight: 700;
+  }
+
+.mat-tab-labels {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+@media (max-width: 500px){
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+        padding: 0px !important;
+    }
+}
+
+::ng-deep .mat-form-field-infix{
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 100% !important;
+}
+
+::ng-deep input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 1000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff80;
+    -webkit-box-shadow: 0 0 0 30px #121212 inset;
+    box-shadow: 0 0 0 30px #121212 inset;
+}
+
+.field-error{
+    color: #cf6679;
+}

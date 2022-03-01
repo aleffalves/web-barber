@@ -1,0 +1,20 @@
+.mat-tab-labels {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mat-card{
+    background-color:#121212;
+}
+
+.green-snapback{
+    font-weight: 600;
+    color: #121212;
+    background-color: rgb(106, 199, 106);
+}
+
+.red-snapback{
+    font-weight: 600;
+    color: #121212;
+    background-color: #bd495c;
+}
