@@ -6,7 +6,7 @@
     </div>
 </mat-toolbar>
 
-<mat-sidenav-container autosize>
+<mat-sidenav-container autosize >
     <mat-sidenav #sidenav mode="side" opened="true">
         <mat-nav-list>
 
@@ -42,7 +42,7 @@
 
         </mat-nav-list>
     </mat-sidenav>
-    <div>
+    <div (click)="isExpanded = false">
         <router-outlet></router-outlet>
     </div>
 </mat-sidenav-container>

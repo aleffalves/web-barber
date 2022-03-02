@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURLBase: 'https://api-studio-do-corte.herokuapp.com'
-  // apiURLBase: 'http://localhost:8080/'
+  // apiURLBase: 'https://api-studio-do-corte.herokuapp.com'
+  apiURLBase: 'http://localhost:8080'
 };
 
 /*
