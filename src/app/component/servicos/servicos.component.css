@@ -1,0 +1,41 @@
+.servicos{
+    font-size: 22px;
+    padding: 22px;
+}
+
+.cadastrar{
+    padding-left:30px ;
+}
+
+.table {
+    width: 265px;
+    background-color: #121212;
+    margin-bottom: 25px;
+  }
+.tables {
+  display: flex;
+}
+
+@media(max-width:500px){
+  .tables{
+    display: inline;
+  }
+}
+
+.mat-column-demo-position {
+    width: 60px;
+    text-align: center;
+  }
+
+td.mat-cell:first-of-type{
+    padding: 0px;
+  }
+
+th.mat-header-cell {
+    font-size: 16px;
+    text-align: center
+}
+
+td.mat-cell{
+    text-align: center
+}
