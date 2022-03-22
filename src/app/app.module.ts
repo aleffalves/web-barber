@@ -51,6 +51,9 @@ import { UsuarioService } from './service/UsuarioService.service';
 import { LoginService } from './service/LoginService.service';
 import { AuthService } from './service/AuthService.service';
 import { AgendamentoComponent } from './component/agendamento/agendamento.component';
+import { ServicosComponent } from './component/servicos/servicos.component';
+import { ModalCadastroHorarioComponent } from './component/modais/modal-cadastro-horario/modal-cadastro-horario.component';
+import { ModalCadastroServicosComponent } from './component/modais/modal-cadastro-servicos/modal-cadastro-servicos.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { AgendamentoComponent } from './component/agendamento/agendamento.compon
     LoginComponent,
     HomeComponent,
     AgendamentoComponent,
+    ServicosComponent,
+    ModalCadastroHorarioComponent,
+    ModalCadastroServicosComponent,
   ],
   imports: [
     BrowserModule,

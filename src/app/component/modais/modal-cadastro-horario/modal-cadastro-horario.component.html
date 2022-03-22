@@ -1,0 +1,12 @@
+<div class="cadastro">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Horário</mat-label>
+            <input matInput type="time" [(ngModel)]="horario.horario" >
+        </mat-form-field>
+    </div>
+    <div class="button">
+        <button mat-raised-button class="button-cadastrar" (click)="cadastrar(horario.horario)">CADASTRAR</button>
+        <button mat-raised-button class="button-cancelar" (click)="cancelar()">CANCELAR</button>
+    </div>
+</div>
